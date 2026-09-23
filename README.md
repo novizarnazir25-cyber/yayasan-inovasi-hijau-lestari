@@ -2,6 +2,9 @@
 
 Website profil lembaga nirlaba (*non-profit organization*) **Yayasan Inovasi Hijau Lestari** (Green Sustainable Innovation Foundation) yang modern, profesional, responsif, dan bernuansa ramah lingkungan (*eco-friendly*).
 
+🔗 **Live Website (GitHub Pages):** [https://novizarnazir25-cyber.github.io/yayasan-inovasi-hijau-lestari/](https://novizarnazir25-cyber.github.io/yayasan-inovasi-hijau-lestari/)  
+📦 **GitHub Repository:** [https://github.com/novizarnazir25-cyber/yayasan-inovasi-hijau-lestari](https://github.com/novizarnazir25-cyber/yayasan-inovasi-hijau-lestari)
+
 ---
 
 ## 🌟 Fitur & Keunggulan Website
