@@ -1,0 +1,228 @@
+/* ==========================================================================
+   Yayasan Inovasi Hijau Lestari - Custom Styles & Design System
+   ========================================================================== */
+
+:root {
+  --primary-forest: #1b4332;
+  --primary-deep: #0f281e;
+  --primary-emerald: #2d6a4f;
+  --secondary-terracotta: #b85d3b;
+  --secondary-earth: #8c3e20;
+  --accent-lime: #52b788;
+  --accent-light: #d8f3dc;
+  --accent-mint: #e8f5e9;
+  --bg-cream: #fbf9f5;
+  --bg-cream-soft: #f4f0ea;
+  --text-charcoal: #1c2520;
+  --text-muted: #53645b;
+  --border-subtle: #e2ded5;
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-charcoal);
+  background-color: var(--bg-cream);
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f0ea;
+}
+::-webkit-scrollbar-thumb {
+  background: #2d6a4f;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1b4332;
+}
+
+/* Background Patterns & Textures */
+.bg-leaf-pattern {
+  background-image: radial-gradient(rgba(45, 106, 79, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.bg-organic-glow {
+  background: radial-gradient(circle at 10% 20%, rgba(82, 183, 136, 0.15) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(184, 93, 59, 0.12) 0%, transparent 40%);
+}
+
+/* Glassmorphism Classes */
+.glass-nav {
+  background: rgba(251, 249, 245, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 222, 213, 0.7);
+}
+
+.glass-dark {
+  background: rgba(15, 40, 30, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Card Hover Elevation */
+.card-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -10px rgba(27, 67, 50, 0.12), 0 8px 16px -6px rgba(184, 93, 59, 0.08);
+}
+
+/* Custom Gradients */
+.gradient-forest {
+  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+}
+
+.gradient-terracotta {
+  background: linear-gradient(135deg, #b85d3b 0%, #d47a59 100%);
+}
+
+.gradient-hero-overlay {
+  background: linear-gradient(
+    to right,
+    rgba(15, 40, 30, 0.94) 0%,
+    rgba(27, 67, 50, 0.85) 50%,
+    rgba(27, 67, 50, 0.65) 100%
+  );
+}
+
+/* Button pulse & badge animations */
+@keyframes subtle-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: subtle-float 5s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(82, 183, 136, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 12px rgba(82, 183, 136, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(82, 183, 136, 0);
+  }
+}
+
+.pulse-badge {
+  animation: pulse-ring 2.5s infinite;
+}
+
+/* Tab Active Indicator */
+.tab-btn.active {
+  background-color: var(--primary-forest);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(27, 67, 50, 0.25);
+}
+
+/* Accordion Smooth Transition */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faq-item.active .faq-content {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Toast Notifications */
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  min-width: 320px;
+  max-width: 420px;
+  background: #ffffff;
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.16);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-left: 5px solid #2d6a4f;
+  transform: translateX(120%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+/* Modal styling */
+.modal-backdrop {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-box {
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-backdrop.open .modal-box {
+  transform: scale(1) translateY(0);
+}
+
+/* Reading Progress Bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  background: linear-gradient(to right, #52b788, #b85d3b);
+  z-index: 99999;
+  width: 0%;
+  transition: width 0.1s ease-out;
+}
